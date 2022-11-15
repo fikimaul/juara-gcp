@@ -1,0 +1,256 @@
+#--------- SLOs and SLAs --------- #
+
+1. A startup just suffered a major outage and wants to change its ways. What are some possible ways it can reduce risks to its service? Select all that apply.
+[v] Focus on automation efforts
+[v] Slowing down the rate of change to the system
+[v] Doing fewer pushes
+[x] Lowering their SLO target
+
+2. In regards to SLOs, what is The Happiness Test?
+[x] When your service “meets target SLO” that means “happy SREs”. If it misses the target SLO that means “sad SREs”.
+[v] When your service “meets target SLO” that means “happy customers”. If it misses the target SLO that means “sad customers”.
+[x] When your service “meets target SLO” that means “happy developers”. If it misses the target SLO that means “sad developers”.
+[x] When your service “meets target SLO” that means “happy leadership”. If it misses the target SLO that means “sad leadership”.
+
+3. True or false, your service should only have one SLO for a specific reliability measurement like latency.
+[v] False
+[x] True
+
+4. What are some characteristics of SLOs? Select all that apply (2 correct responses)
+[v] SLOs should be stronger than your SLAs to catch issues before they violate customer expectation.
+[v] SLOs are internal promises to meet customer expectations.
+[x] SLOs must have monetary consequences if violated.
+[x] SLOs are external promises to your customers.
+
+5. What are some characteristics of SLAs? Select all that apply (2 correct responses).
+[x] SLAs do not need a consequence if violated.
+[v] SLAs must have a consequence if violated.
+[v] SLAs are agreements with your customers about the reliability of your service.
+[x] SLAs are the dividing line between happy and unhappy users.
+[x] SLAs are internal team goals for your service.
+
+
+# --------- Reliability and iterating --------- #
+1. True or false, once you’ve set your SLOs you never have to touch them again.
+[x] True
+[v] False
+
+2. What are some characteristics of a good SLO target? Select all that apply (2 correct responses).
+[x] Challenging to meet all of the time
+[v] Just high enough to keep customers happy
+[v] Ambitious but achievable
+[x] Just high enough to keep the product managers happy
+
+3. True or false, you should always aim to make your service as reliable as it can possibly be.
+[x] True
+[v] False
+
+# --------- Error budgets --------- #
+1. What are the benefits to using error budgets? Select all that apply (3 correct responses).
+[v] Error budgets help to balance development velocity and reliability.
+[x] Error budgets make it easier to punish teams that cause outages.
+[x] Responding to outages becomes easier with an error budget in place.
+[v] Error budgets align incentives between different parts of the organization.
+[v] Developers can self-regulate and manage risk better with error budgets.
+
+2. What is an error budget? Select all that apply (2 correct responses).
+[x] The time it takes to fix bugs.
+[x] The time you use to push new releases.
+[v] A quantitative metric for service unreliability.
+[v] The inverse of an SLO.
+
+3. Who is responsible for preventing error budget exhaustion? Select all that apply (2 correct responses).
+[x] Executives
+[x] Software product managers
+[v] Development teams
+[v] SRE teams
+
+4.True or false, you need executive buy-in for your error budgets.
+[v] True
+[x] False
+
+# --------- Increasing reliability --------- #
+1. What are some operational ways you can increase reliability? Select all that apply (3 correct responses).
+[v] Work with the development team to provide input on the feasibility of achieving targets.
+[v] Periodically collect data on poor reliability regions and focus extra efforts on those regions.
+[v] Providing post-mortems
+[x] Creating an operations center where incident responders can watch graphs
+
+2. When improving service reliability, what are some ways you can improve the time-to-detect? Select all that apply (2 correct responses).
+[x] Add replication to your service regions.
+[v] Add automated alerting that pages a human.
+[v] Implement monitoring for your service.
+[x] Develop a playbook for outage scenarios.
+
+3. When improving service reliability, what are some ways you can improve the time-to-resolution? Select all that apply (2 correct responses).
+[v] Develop a playbook for outage scenarios.
+[x] Add automated alerting that pages a human.
+[v] Create automation for manual mitigation steps
+[x] Running in multiple zones so that failures are less likely to happen.
+
+# --------- Increasing reliability --------- #
+1. What do you think makes a metric a good measure of happiness? Choose all responses that are correct (2 correct responses).
+[v] It is a close approximation of the user experience
+[v] It shows long-term trends clearly
+[x] It is derived by scraping social media for complaints
+[x] It closely tracks well-known system behavior
+[x] It reacts quickly to changes and outages
+
+# --------- Commonly used SLIs --------- #
+1. One commonly used signifier of success or failure is the status code of an HTTP or RPC response. How can this be problematic?
+[x] You risk double counting events recorded in the application.
+[x] There are too many status codes, classifying them as good or bad can be difficult.
+[v] The response contents might not match the status code.
+[x] Your application frameworks might not give you enough control over the status code.
+
+2. Which of these scenarios would a quality SLI be appropriate for? Select all that apply (2 correct responses).
+[x] Load balancers failing requests because they couldn't find a healthy backend
+[v] Serving stale data from cache because the database is overloaded
+[x] Cancelling long-running operations because of a timeout
+[v] Returning results after searching only a subset of data to save CPU cycles when overloaded
+
+3. What are some characteristics of SLIs? Select all that apply (2 correct responses).
+[v] A quantitative measurement of a user experience.
+[v] Expressed as a proportion of all valid events that were good.
+[x] They should never be used for setting SLOs.
+[x] Metrics that measure usage of an app.
+
+4. Which of these is an example of an SLI?
+[x] 99% of HTTP requests are successful
+[x] Proportion of users that are happy
+[v] Proportion of HTTP requests served successfully
+[x] 95% of requests have low latency
+
+# --------- Correctness and Coverage --------- #
+1. Both Correctness and Coverage SLIs need an external source of truth to compare against. Why is this?
+[x] It allows the SLIs to detect accidental corruption.
+[x] It allows the SLIs to detect invalid data.
+[v] It allows the SLIs to detect misbehavior of the system.
+[x] It allows the SLIs to detect badly-behaving users.
+
+# --------- Postmortem! --------- #
+1. Set up a process to keep third-party dependencies up-to-date.
+[v] TRUE
+[x] FALSE
+
+2. In this assignment you need to choose from a set of action items to prevent the recurrence of outages similar to the one described in this postmortem.
+Postmortem: Blank Profile Pages!
+Impact
+
+From 08:43 to 13:17, users accessing their profile pages received incomplete responses. This rendered them unable to view or edit their profile.
+
+Root Causes and Trigger
+proximate root cause was a bug in the web server''s handling of unicode HTML templates. The trigger was commit a6d78d13, which changed the profile page template to support localization, but at the same time accidentally introduced unicode quotation marks (U+201C “, U+201D ”) into the template HTML. When the web server encountered these instead of the standard ascii quotation mark (U+0022 "), the template engine aborted rendering of the output.
+
+Detection
+Because the aborted rendering process did not throw an exception, the HTTP status code for the incomplete responses was still 200 OK. The problem thus went undetected by our SLO-based alerts. The support and social media teams manually escalated concerns about a substantially increased level of complaints relating to the profile page at 12:14.
+
+Resolution
+The web server was rolled back to the previous day''s build which did not contain the offending commit.
+
+Lessons Learned
+Things that went well:
+Support/SM teams were able to find the correct escalation path and successfully contact ops team.
+Our rollback procedures were executed quickly and resolved the problem.
+Things that went poorly:
+HTTP status code SLIs cannot detect incomplete responses.
+Web server uses a severely outdated vendored version of the templating engine with substantially broken unicode support
+Where we got lucky:
+User profile page is relatively unimportant to our revenue stream.
+Action Items
+Review the proposed action items and use the TRUE/FALSE options to indicate if you agree that an action item should be implemented to prevent the outage described in this postmortem.
+
+Hint:- in this activity, there are 2 action items that meet this criterion.
+
+Hint:- Try to close the measurement gap.
+
+Grading: This is a required activity for the module.
+Here''s the first proposed action item. Mark as TRUE if you agree or FALSE if you don''t.
+
+Create a synthetic client to test the user profile page and replace the current availability SLI with one measured using this client.
+
+[x] TRUE
+[v] FALSE
+
+3. Replace the current availability SLI with another one based on load balancer bandwidth metrics.
+[x] TRUE
+[v] FALSE
+
+4.Create a synthetic client to test the user profile page and augment the current availability SLI with one measured using this client.
+[v] TRUE
+[x] FALSE
+
+5. Set up regular incident response drills including members of the support and social media teams.
+[x] TRUE
+[v] FALSE
+
+6. Create client-side instrumentation to detect malformed responses and augment the current availability SLI with one based on this data.
+[x] TRUE
+[v] FALSE
+
+7. Set up continuous integration / continuous delivery pipelines.
+[x] TRUE
+[v] FALSE
+
+# --------- Setting Achievable SLO targets --------- #
+
+1. Please propose achievable Latency SLI thresholds and SLO targets for the SLIs developed during the lecture videos using the following 6 weeks of historical data from our load balancers:
+Grading: This is a required activity for the module. Choose the four correct answers.
+[v] Latency SLO: 50% of requests complete in under 200 ms over a 28 day window.
+[x] Latency SLO: 99% of requests complete in under 2500 ms over a 28 day window.
+[x] Latency SLO: 95% of requests complete in under 500 ms over a 28 day window.
+[v] Latency SLO: 99% of requests complete in under 1000 ms over a 28 day window.
+[x] Latency SLO: 50% of requests complete in under 100 ms over a 28 day window.
+[v] Latency SLO: 95% of requests complete in under 750 ms over a 28 day window.
+[v] Latency SLO: 90% of requests complete in under 500 ms over a 28 day window.
+[x] Latency SLO: 90% of requests complete in under 750 ms over a 28 day window.
+
+2. Please propose achievable Availability SLO targets for the SLIs developed during the lecture videos using the following 6 weeks of historical data from our load balancers:
+You can assume that "Server Errors" includes all 429 and 5xx HTTP response codes.
+Grading: This is a required activity for the module. Choose the two correct answers.
+[x] Availability SLO: 99% of responses are good over the past 28 days.
+[x] Availability SLO: 99.99% of responses are good over the past 28 days.
+[x] Availability SLO: 99.5% of responses are good over the past 28 days.
+[v] Availability SLO: 99.9% of responses are good over the past 28 days.
+[v] Availability SLO: 99.95% of responses are good over the past 28 days.
+
+
+# --------- Error budget policies --------- #
+1. Complete this sentence: An Error Budget Policy…
+[x] ...documents your SLOs, SLIs and SLAs
+[x] …dictates when to make changes to your system
+[v] ...describes how your business decides to trade off reliability work against other feature work when the SLO indicates a service is not reliable enough
+[x] ...describes how reliable your services are
+
+2. The best place to store your Error Budget Policy is…
+[v] Someplace broad and high-level
+[x] With the single service you are monitoring
+[x] With the executive responsible for the business org
+[x] With the service owner
+
+
+# --------- Error budget policy - considerations --------- #
+1. What are some of the considerations when setting an Error Budget Policy? Choose all that apply.
+[v] The policy clearly describes how and when it should be applied
+[v] The policy is consistently applied and the consequences on NOT applying it are clearly defined
+[x] The policy can be renegotiated at the time of an incident
+[x] The policy is determined solely by the executive responsible for the application
+
+2. What are some examples of criteria of thresholds set in an Error Budget Policy?
+[v] Paging when the SLO is violated
+[x] Paging when a bad push creates bugs
+[v] Escalating after Xh of error budget is burned
+[x] Escalating to Dev teams when the number of bugs increase over Xd
+
+# --------- Consequences of SLO Misses --------- #
+1. What are some examples of criteria of thresholds set in an Error Budget Policy? Select all that apply (2 correct responses).
+[x] Escalating to Dev teams when the number of bugs increase over Xd
+[v] Paging when the SLO is violated
+[x] Paging when a bad push creates bugs
+[v] Escalating after Xh of error budget is burned
+
+2. Complete this sentence: An Error Budget Policy…
+[v] ...describes how your business decides to trade off reliability work against other feature work when the SLO indicates a service is not reliable enough
+[x] …dictates when to make changes to your system
+[] ...documents your SLOs, SLIs and SLAs
+[] ...describes how reliable your services are

@@ -1,0 +1,17 @@
+gcloud auth list
+gcloud config list project
+gsutil cp gs://spls/gsp499/user-authentication-with-iap.zip .
+unzip user-authentication-with-iap.zip
+cd user-authentication-with-iap
+cd 1-HelloWorld
+cat main.py
+gcloud app deploy
+gcloud app browse
+
+gcloud services disable appengineflex.googleapis.com
+cd ~/user-authentication-with-iap/2-HelloUser
+gcloud app deploy
+gcloud app browse
+curl -X GET <your-url-here> -H "X-Goog-Authenticated-User-Email: totally fake email"
+gcloud app deploy
+gcloud app browse

@@ -1,0 +1,2 @@
+gcloud sql connect myinstance --user=root
+CREATE DATABASE guestbook;

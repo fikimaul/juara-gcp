@@ -1,0 +1,18 @@
+# GSP074
+# BUCKET NAME qwiklabs-gcp-04-e3adaac423ad
+
+curl https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg --output ada.jpg
+
+gsutil cp ada.jpg gs://qwiklabs-gcp-04-e3adaac423ad
+
+rm ada.jpg
+
+gsutil cp -r  gs://qwiklabs-gcp-04-e3adaac423ad/ada.jpg .
+
+gsutil cp gs://qwiklabs-gcp-04-e3adaac423ad/ada.jpg gs://qwiklabs-gcp-04-e3adaac423ad/image-folder/
+
+gsutil ls gs://qwiklabs-gcp-04-e3adaac423ad
+
+gsutil acl ch -u AllUsers:R gs://qwiklabs-gcp-04-e3adaac423ad/ada.jpg
+
+gsutil acl ch -d AllUsers gs://qwiklabs-gcp-04-e3adaac423ad/ada.jpg
