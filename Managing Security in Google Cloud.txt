@@ -1,0 +1,79 @@
+#--------- Module Quiz - Foundations of Google Cloud Security --------- #
+1. Which ONE of the following statements is TRUE concerning Google's built-in security measures?
+[x] Customers always have the option to configure their instances to encrypt all of their data while it is "at rest" within Google Cloud.
+[] An organization's on-premises resources are not allowed to connect to Google Cloud in order to lower the risk of DDoS attacks.
+[] Only Google-managed encryption keys are allowed to be used within Google Cloud.
+[v] To guard against phishing attacks, all Google employee accounts require the use of U2F compatible security keys.
+
+2. Which TWO of the following statements are TRUE regarding Google's ability to protect its customers from DoS attacks?
+[] Application-aware defense is not currently supported on Google Cloud, although support for this is planned in the very near future.
+[v] Google Front End can detect when an attack is taking place and can drop or throttle traffic associated with that attack.
+[v] A single Google data center has many times the bandwidth of even a large DoS attack, enabling it to simply absorb the extra load.
+
+3. Which TWO of the following statements are TRUE regarding regulatory compliance on Google Cloud?
+[] Contacting your regulatory compliance certification agency is the only way to find out whether Google currently supports that particular standard.
+[] Google has no plans at this time to expand its already-extensive portfolio of regulatory compliance certifications.
+[v] Google's Cloud products regularly undergo independent verification of security, privacy, and compliance controls.
+[v] Proper configuration of encryption and firewalls is not the only requirement for achieving regulatory compliance.
+
+#--------- Module Quiz - Cloud Identity --------- #
+1. The main purpose of Google Cloud Directory Sync is to: (choose ONE option below)
+[v] Help simplify provisioning and de-provisioning user accounts.
+[x] Enable two-way data synchronization between Google Cloud and AD/LDAP accounts.
+[] Completely replace an Active Directory or LDAP service.
+
+2. Which of the following statements is TRUE for the use of Cloud Identity?
+[] A Google Workspace or Cloud Identity account can be associated with more than one Organization.
+[] Cloud Identity can work with any domain name that is able to receive email.
+[x] You cannot use both Cloud Identity and Google Workspace services to manage your users across your domain.
+[x] Your organization must use Google Workspace services in order to use Cloud Identity.
+
+3. Which TWO of the following are considered authentication "best practices?"
+[] Requiring 2-Step Verification (2SV) is only recommended for super-admin accounts.
+[v] Avoid managing permissions on an individual user basis where possible.
+[] Organization Admins should never remove the default Organization-level permissions from users after account creation.
+[v] You should have no more than three Organization admins.
+
+#--------- Module Quiz - Identity and Access Management (IAM) --------- #
+1. Which FOUR of the following are Cloud IAM Objects that can be used to organize resources in Google Cloud?
+[v] Role
+[] Container
+[v] Folder
+[v] Member
+[] Instance
+[v] Organization
+[] Bucket
+
+2. Which TWO of the following statements about Cloud IAM Policies is TRUE?
+[] A less restrictive parent policy will not override a more restrictive child resource policy.
+[v] A policy is a collection of access statements attached to a resource.
+[] An organization policy can only be applied to the organization node.
+[v] A Policy binding binds a list of members to a role.
+
+3. Projects in Google Cloud provide many management-related features, including the ability to (choose TWO below...)
+[] Balance server load between different Projects.
+[v] Track and manage quota usage.
+[v] Selectively enable specific services and APIs.
+[] Keep on-prem AD/LDAP accounts synced up with user's Google Cloud resources.
+
+#--------- Module Quiz - VPCs for Isolation and Security --------- #
+1. Which ONE of the following statements is TRUE when discussing the SSL capabilities of Google Cloud Load Balancer?
+[x] If no SSL policy is set, the SSL policy is automatically set to the most constrained policy, which is RESTRICTED.
+[v] The Google-managed profile, COMPATIBLE, allows clients which support out-of-date SSL features.
+[] You must use one of the 3 pre-configured “Google-managed profiles” to specify the level of compatibility appropriate for your application.
+[] Google Cloud Load Balancers require, and will only accept, a Google-managed SSL Cert.
+
+2. Which TWO of the following statements about VPCs is TRUE?
+[] A connection is considered active if it has at least one packet sent over a one hour period.
+[v] VPC firewall rules in Google Cloud are global in scope.
+[v] Every VPC network functions as a distributed firewall where firewall rules are defined at the network level.
+[] Google Cloud Firewall allow rules by default only affect traffic flowing in one direction.
+
+3. Which THREE of the following are firewall rule parameters?
+[] IP Address
+[v] Direction
+[] Organization
+[v] Source
+[v] Action
+[] Timestamp
+[] Project
